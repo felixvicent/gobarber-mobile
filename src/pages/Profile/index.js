@@ -4,6 +4,6 @@ import React from 'react';
 
 import Background from '~/components/Background';
 
-const Dashboard = () => <Background />;
+const Profile = () => <Background />;
 
-export default Dashboard;
+export default Profile;
