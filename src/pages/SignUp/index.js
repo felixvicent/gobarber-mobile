@@ -66,6 +66,7 @@ const SignUp = ({ navigation }) => {
           <FormInput
             icon="lock-outline"
             secureTextEntry
+            autoCapitalize="none"
             placeholder="Sua senha secreta"
             ref={passwordRef}
             returnKeyType="send"

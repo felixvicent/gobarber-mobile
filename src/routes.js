@@ -1,17 +1,38 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import SignIn from '~/pages/SignIn';
 import SignUp from '~/pages/SignUp';
 
-const Tabs = createStackNavigator();
+import Dashboard from '~/pages/Dashboard';
 
-export default () => (
+const MainStack = createStackNavigator();
+const SignStack = createStackNavigator();
+const AppTabs = createBottomTabNavigator();
+
+const SignNavigator = () => (
+  <SignStack.Navigator screenOptions={{ headerShown: false }}>
+    <SignStack.Screen name="SignIn" component={SignIn} />
+    <SignStack.Screen name="SignUp" component={SignUp} />
+  </SignStack.Navigator>
+);
+
+const AppNavigator = () => (
+  <AppTabs.Navigator>
+    <AppTabs.Screen name="Dashboard" component={Dashboard} />
+  </AppTabs.Navigator>
+);
+
+export default (isSigned = false) => () => (
   <NavigationContainer>
-    <Tabs.Navigator screenOptions={{ headerShown: false }}>
-      <Tabs.Screen name="SignIn" component={SignIn} />
-      <Tabs.Screen name="SignUp" component={SignUp} />
-    </Tabs.Navigator>
+    <MainStack.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName={isSigned ? 'App' : 'Sign'}
+    >
+      <MainStack.Screen name="Sign" component={SignNavigator} />
+      <MainStack.Screen name="App" component={AppNavigator} />
+    </MainStack.Navigator>
   </NavigationContainer>
 );
