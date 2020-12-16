@@ -28,7 +28,7 @@ const AppNavigator = () => (
       keyboardHidesTabBar: true,
       activeTintColor: '#fff',
       inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
-      style: { backgroundColor: '#8d41a8' },
+      style: { backgroundColor: '#8d41a8', borderTopWidth: 0 },
     }}
   >
     <AppTabs.Screen
