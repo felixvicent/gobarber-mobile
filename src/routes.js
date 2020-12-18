@@ -49,7 +49,16 @@ const NewNavigator = ({ navigation }) => (
       component={SelectProvider}
     />
     <NewStack.Screen
-      options={{ title: 'Selecione o horário' }}
+      options={{
+        title: 'Selecione o horário',
+        headerLeft: () => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SelectProvider')}
+          >
+            <Icon name="chevron-left" size={20} color="#fff" />
+          </TouchableOpacity>
+        ),
+      }}
       name="SelectDateTime"
       component={SelectDateTime}
     />
