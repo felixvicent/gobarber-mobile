@@ -48,7 +48,11 @@ const NewNavigator = ({ navigation }) => (
       name="SelectProvider"
       component={SelectProvider}
     />
-    <NewStack.Screen name="SelectDateTime" component={SelectDateTime} />
+    <NewStack.Screen
+      options={{ title: 'Selecione o horário' }}
+      name="SelectDateTime"
+      component={SelectDateTime}
+    />
     <NewStack.Screen name="Confirm" component={Confirm} />
   </NewStack.Navigator>
 );

@@ -1,12 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+
+import Background from '~/components/Background';
 
 // import { Container } from './styles';
 
-const SelectDateTime = () => (
-  <View>
-    <Text>Select Date Time</Text>
-  </View>
-);
+const SelectDateTime = () => <Background />;
 
 export default SelectDateTime;
