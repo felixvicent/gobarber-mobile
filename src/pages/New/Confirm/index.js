@@ -20,7 +20,7 @@ const Confirm = ({ route, navigation }) => {
   async function handleAddAppointment() {
     await api.post('appointments', { provider_id: provider.id, date: time });
 
-    navigation.navigate('Dashboard');
+    navigation.reset({ index: 0, routes: [{ name: 'Dashboard' }] });
   }
   return (
     <Background>
@@ -58,7 +58,7 @@ Confirm.propTypes = {
     }),
   }).isRequired,
   navigation: PropTypes.shape({
-    navigate: PropTypes.func,
+    reset: PropTypes.func,
   }).isRequired,
 };
 
