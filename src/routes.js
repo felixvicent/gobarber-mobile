@@ -62,7 +62,20 @@ const NewNavigator = ({ navigation }) => (
       name="SelectDateTime"
       component={SelectDateTime}
     />
-    <NewStack.Screen name="Confirm" component={Confirm} />
+    <NewStack.Screen
+      options={{
+        title: 'Confirmar agendamento',
+        headerLeft: () => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SelectDateTime')}
+          >
+            <Icon name="chevron-left" size={20} color="#fff" />
+          </TouchableOpacity>
+        ),
+      }}
+      name="Confirm"
+      component={Confirm}
+    />
   </NewStack.Navigator>
 );
 
